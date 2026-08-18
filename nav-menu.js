@@ -3,7 +3,7 @@ const primaryNav = document.getElementById('primaryNav');
 
 if (primaryNav && !primaryNav.querySelector('[data-command-center-link]')) {
   const commandCenterLink = document.createElement('a');
-  commandCenterLink.href = 'https://personal-project-command-center-pri.vercel.app/';
+  commandCenterLink.href = 'https://command.kylechristopher.com/';
   commandCenterLink.target = '_blank';
   commandCenterLink.rel = 'noopener noreferrer';
   commandCenterLink.textContent = 'Command Center';
