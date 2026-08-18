@@ -1,6 +1,19 @@
 const navToggle = document.querySelector('.nav-toggle');
 const primaryNav = document.getElementById('primaryNav');
 
+if (primaryNav && !primaryNav.querySelector('[data-command-center-link]')) {
+  const commandCenterLink = document.createElement('a');
+  commandCenterLink.href = 'https://personal-project-command-center-pri.vercel.app/';
+  commandCenterLink.target = '_blank';
+  commandCenterLink.rel = 'noopener noreferrer';
+  commandCenterLink.textContent = 'Command Center';
+  commandCenterLink.dataset.commandCenterLink = 'true';
+
+  const scheduleLink = primaryNav.querySelector('.schedule-link');
+  if (scheduleLink) primaryNav.insertBefore(commandCenterLink, scheduleLink);
+  else primaryNav.appendChild(commandCenterLink);
+}
+
 if (navToggle && primaryNav) {
   const closeMenu = () => {
     navToggle.setAttribute('aria-expanded', 'false');
